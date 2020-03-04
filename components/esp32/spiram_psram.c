@@ -647,6 +647,7 @@ esp_err_t IRAM_ATTR psram_enable(psram_cache_mode_t mode, psram_vaddr_mode_t vad
         psram_io.psram_cs_io  = PICO_PSRAM_CS_IO;
     } else if ((pkg_ver == EFUSE_RD_CHIP_VER_PKG_ESP32D0WDQ6) || (pkg_ver == EFUSE_RD_CHIP_VER_PKG_ESP32D0WDQ5)){
         ESP_EARLY_LOGI(TAG, "This chip is ESP32-D0WD");
+        s_clk_mode = PSRAM_CLK_MODE_NORM;
         psram_io.psram_clk_io = D0WD_PSRAM_CLK_IO;
         psram_io.psram_cs_io  = D0WD_PSRAM_CS_IO;
     } else {
