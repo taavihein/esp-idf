@@ -291,6 +291,12 @@ menu "ESP32-specific"
                 help
                     The PSRAM CS IO can be any unused GPIO, user can config it based on hardware design. If user use
                     1.8V flash and 1.8V psram, this value can only be one of 6, 7, 8, 9, 10, 11, 16, 17.
+
+            config SPIRAM_PSRAM_FLASH_SINGLE_CLOCK_SOURCE
+                bool "Use the same SPI_CLK for PSRAM and FLASH"
+                default n
+                help
+                    Needs appropriate pin config, only enable if you know what you're doing.
         endmenu
 
         menu "PSRAM clock and cs IO for ESP32-D2WD"
